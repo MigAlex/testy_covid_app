@@ -23,12 +23,11 @@ class InfoPanel extends StatelessWidget {
               child: basicContainer('DONATE'),
             ),
             GestureDetector(
-              onTap: () {
-                launch(
-                    'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters');
-              },
-              child: basicContainer('MYTH BUSTERS')
-            ),
+                onTap: () {
+                  launch(
+                      'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters');
+                },
+                child: basicContainer('MYTH BUSTERS')),
           ],
         ),
       ),
@@ -36,22 +35,20 @@ class InfoPanel extends StatelessWidget {
   }
 }
 
-
-Container basicContainer(String myText){
-             return  Container(
-              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-              margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-              color: primaryBlack,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('$myText', style: infoTextStyle()),
-                  Icon(Icons.arrow_forward, color: Colors.white),
-                ],
-              ),
-            );
+Container basicContainer(String myText) {
+  return Container(
+    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+    margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+    color: primaryBlack,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text('$myText', style: infoTextStyle()),
+        Icon(Icons.arrow_forward, color: Colors.white),
+      ],
+    ),
+  );
 }
-
 
 TextStyle infoTextStyle() {
   return TextStyle(

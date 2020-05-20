@@ -45,10 +45,8 @@ class WorldWidePanel extends StatelessWidget {
 }
 
 class StatusPanel extends StatelessWidget {
-  final Color panelColor;
-  final Color textColor;
-  final String title;
-  final String count;
+  final Color panelColor,textColor;
+  final String title, count;
 
   const StatusPanel(
       {Key key, this.panelColor, this.textColor, this.title, this.count})

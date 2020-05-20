@@ -7,18 +7,21 @@ class MostAffectedPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListView.builder(
+      child: ListView.separated(
+        separatorBuilder: (context, index) => Divider(thickness: 2,),
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: 5,
+        itemCount: 10,
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Row(children: [
-              Image.network(countryData[index]['countryInfo']['flag'], height: 25),
-              SizedBox(height: 10),
+              Text('#${index+1}'),
+              SizedBox(width: 5),
+              Image.network(countryData[index]['countryInfo']['flag'], height: 25, width: 55,),
+              SizedBox(width: 10),
               Text(countryData[index]['country'], style: TextStyle(fontWeight: FontWeight.bold),),
-              SizedBox(height: 10),
+              SizedBox(width: 10),
               Text('Deaths: ' + countryData[index]['deaths'].toString(), style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold))
             ],),
           );
